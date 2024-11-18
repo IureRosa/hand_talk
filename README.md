@@ -64,6 +64,11 @@ Before running the project, you need to install the required dependencies.
 
    ```python app.py```
 
+### Test the Endpoint Using CURL or Postman
+You can now test the API using curl or Postman by sending a POST request to the /generate-image endpoint.
+
+Example Request:
+To generate an image, you need to send a JSON request with parameters like person, instrument, environment, and style. Here's an example using curl:
 
 ```
 curl -X 'POST' \
@@ -76,3 +81,38 @@ curl -X 'POST' \
   "style": "anime"
 }'
 ```
+In this example, the request will generate an image of a black woman playing a guitar in a jungle in the anime style.
+
+Example Response:
+If the request is successful, you will receive a response containing a URL to the generated image, like this:
+```
+{
+  "image_url": "http://127.0.0.1:8000/generated_images/generated_image_1.png"
+}
+
+```
+
+### Decode and View the Image
+To view the image, follow these steps:
+
+1. Download the image using the URL returned by the API. You can use your browser or any tool to download the image. For example, visit the URL:
+```
+http://127.0.0.1:8000/generated_images/generated_image_1.png
+```
+2. Alternatively, View the Image in Python:
+```
+from PIL import Image
+import requests
+from io import BytesIO
+
+# Replace with the actual URL of the image returned by the API
+image_url = "http://127.0.0.1:8000/generated_images/generated_image_1.png"
+
+response = requests.get(image_url)
+img = Image.open(BytesIO(response.content))
+
+# Show the image
+img.show()
+
+```
+This code will fetch the image from the URL and display it using the default image viewer on your system.
