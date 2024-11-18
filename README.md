@@ -46,8 +46,10 @@ Before running the project, you need to install the required dependencies.
 
    Clone the project to your local machine:
 
-   ```git clone git@github.com:IureRosa/hand_talk.git```
-   ```cd hand_talk```
+   ```
+   git clone git@github.com:IureRosa/hand_talk.git
+   cd hand_talk
+   ```
 
 2. **Create a Virtual Environment (optional but recommended):**
 
