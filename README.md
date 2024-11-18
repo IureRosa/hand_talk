@@ -1,7 +1,7 @@
 # Hand Talk: Stable Diffusion Image Generation API
 
 ## Project Structure
-
+```
 hand_talk/
 ├── /models
 │   └── (place the downloaded model here)
@@ -9,6 +9,7 @@ hand_talk/
 │   └── handler.py           (Handles the image generation logic)
 ├── requirements.txt         (Project dependencies)
 └── app.py                   (Flask application that starts the server)
+```
 
 
 This project is an **API for generating images** using the **Stable Diffusion model (DreamShaper v1.5)**. The API receives a JSON request with specific parameters, generates an image based on those parameters, and returns the image as a base64-encoded string.
