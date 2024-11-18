@@ -65,6 +65,7 @@ Before running the project, you need to install the required dependencies.
    ```python app.py```
 
 
+```
 curl -X 'POST' \
   'http://127.0.0.1:8000/generate-image/' \
   -H 'Content-Type: application/json' \
@@ -74,4 +75,4 @@ curl -X 'POST' \
   "environment": "jungle",
   "style": "anime"
 }'
-
+```
