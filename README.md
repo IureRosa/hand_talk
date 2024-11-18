@@ -1,5 +1,16 @@
 # Hand Talk: Stable Diffusion Image Generation API
 
+## Project Structure
+
+hand_talk/
+├── /models
+│   └── (place the downloaded model here)
+├── /api
+│   └── handler.py           (Handles the image generation logic)
+├── requirements.txt         (Project dependencies)
+└── app.py                   (Flask application that starts the server)
+
+
 This project is an **API for generating images** using the **Stable Diffusion model (DreamShaper v1.5)**. The API receives a JSON request with specific parameters, generates an image based on those parameters, and returns the image as a base64-encoded string.
 
 The API is built with **Flask**, and it uses the **Stable Diffusion** model for image generation.
@@ -44,3 +55,23 @@ Before running the project, you need to install the required dependencies.
 3. **Activate the Virtual Environment:**
 
 ```source venv/bin/activate```
+
+4. **Install the Dependencies:**
+
+   ```pip install -r requirements.txt```
+
+5. **Running the Flask API**
+
+   ```python app.py```
+
+
+curl -X 'POST' \
+  'http://127.0.0.1:8000/generate-image/' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "person": "black woman",
+  "instrument": "guitar",
+  "environment": "jungle",
+  "style": "anime"
+}'
+
